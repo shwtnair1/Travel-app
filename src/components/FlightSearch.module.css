@@ -1,0 +1,8 @@
+.searchFormContainer{
+    border:1px solid grey;
+    display:flex;
+    flex-direction: column;
+    padding:32px;
+    justify-content: center;
+    gap:10px;
+}
