@@ -6,6 +6,7 @@ import {
   within,
   waitFor,
 } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import { SearchForm } from './SearchForm';
 import { useHandleSearchFlights } from '@/hooks/useHandleSearchFlights';
@@ -25,6 +26,8 @@ jest.mock('../../hooks/useHandleSearchFlights', () => ({
     handleSubmit: jest.fn(),
   })),
 }));
+
+const user = userEvent.setup();
 
 describe('SearchForm', () => {
   beforeEach(() => {
@@ -64,9 +67,8 @@ describe('SearchForm', () => {
     ) as HTMLInputElement;
 
     inputContainer.focus();
-    fireEvent.change(input, {
-      target: { value: 'AMS' },
-    });
+    await user.type(input, 'AMS');
+
     fireEvent.keyDown(inputContainer, { key: 'ArrowDown' });
     fireEvent.keyDown(inputContainer, { key: 'Enter' });
 

@@ -24,8 +24,8 @@ A modern flight search interface built with Nextjs,React, TypeScript, and Materi
 
 # Run locally
 
-npm i
-npm run dev
+- npm i
+- npm run dev
 
 # Run all unit tests
 
